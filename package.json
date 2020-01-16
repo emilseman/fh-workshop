@@ -1,0 +1,15 @@
+{
+  "name": "fh-workshop",
+  "description": "Sample project for feature hub bootstrap",
+  "main": "index.js",
+  "author": "Emil Seman <emil.seman@sinnerschrader.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+
+}
