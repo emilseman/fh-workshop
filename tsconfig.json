@@ -3,13 +3,15 @@
     "baseUrl": "./packages",
     "lib": ["es2017"],
     "paths": {"packages/*": ["./*/src"]},
+    "moduleResolution": "node",
     "outDir": "dist/",
     "rootDir": "",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "ES2017",
-    "jsx": "react"
+    "jsx": "react",
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",

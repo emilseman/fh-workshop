@@ -21,6 +21,7 @@ composer.lock
 # Project Specific
 node_modules/
 dist/
+dist-es/
 *.log
 /lib
 tmp
