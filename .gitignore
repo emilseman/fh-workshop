@@ -19,7 +19,8 @@ composer.lock
 *.swp
 *.swo
 # Project Specific
-/node_modules
+node_modules/
+dist/
 *.log
 /lib
 tmp

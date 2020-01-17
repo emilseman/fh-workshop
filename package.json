@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Emil Seman <emil.seman@sinnerschrader.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "lerna run build"
+  },
   "devDependencies": {
     "lerna": "^3.20.2"
   },
