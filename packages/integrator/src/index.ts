@@ -6,7 +6,6 @@ const app = express();
 const PORT = 3001;
 const publicFolder = path.join(__dirname, '..', 'dist-es');
 
-
 app.use('/public', express.static(publicFolder));
 app.get('/*', (req: Request, res: Response) => {
   const content = '<div id="root">React placeholder here</div>';

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { FeatureHubComponent } from './FeatureHubComponent';
 
 export class App extends React.Component {
   public render(): React.ReactNode {
-    return <FeatureHubComponent />;
+    return <span>This is feature App no. 1</span>;
   }
 }
