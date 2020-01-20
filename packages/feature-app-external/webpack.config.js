@@ -7,6 +7,7 @@ const client = {
 	},
 	output: {
 		filename: '[name].js',
+		libraryTarget: 'umd',
 		path: __dirname + '/dist-es/'
 	},
 	devtool: 'source-map',
