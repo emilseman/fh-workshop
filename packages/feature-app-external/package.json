@@ -1,0 +1,34 @@
+{
+  "name": "feature-app-external",
+  "version": "0.0.0",
+  "description": "Sample external feature app",
+  "author": "Aleš Jiránek <ales.jiranek@sinnerschrader.com>",
+  "homepage": "https://github.com/emilseman/fh-workshop#readme",
+  "license": "ISC",
+  "main": "dist-es/feature-app-external.js",
+  "module": "dist-es/feature-app-external.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emilseman/fh-workshop.git"
+  },
+  "scripts": {
+    "build": "run-p build:es",
+    "build:es": "webpack",
+    "build:watch": "yarn build:es --watch",
+    "watch": "build:watch",
+    "server": "node ./server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/emilseman/fh-workshop/issues"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
