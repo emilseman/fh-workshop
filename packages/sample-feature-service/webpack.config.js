@@ -1,9 +1,10 @@
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const path = require('path');
 
 const client = {
     mode: 'development',
     entry: {
-        fa1: './src/index.tsx'
+        'sample-feature-service': './src/index.tsx'
     },
     output: {
         filename: '[name].js',
@@ -18,20 +19,15 @@ const client = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader'
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        configFile: path.resolve(__dirname, 'tsconfig.build.es.json')
+                    }
+                }
             }
         ]
     },
-    plugins: [
-        new FileManagerPlugin({
-            onEnd: {
-                copy: [{
-                    source: __dirname + '/dist-es/' + 'fa1.js',
-                    destination: __dirname + '/../integrator/dist-es/'
-                }],
-            }
-        }),
-    ],
-    externals: {react: 'react', 'styled-components': 'styled-components'}
+    plugins: [],
 };
 module.exports = [client];

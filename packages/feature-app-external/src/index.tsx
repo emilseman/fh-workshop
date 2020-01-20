@@ -2,18 +2,18 @@ import * as React from 'react';
 import { App } from './App';
 
 export default {
-    dependencies: {
-        externals: {
-            react: '^16.12.0',
-        },
-        featureServices: {},
+  dependencies: {
+    externals: {
+      react: '^16.12.0',
     },
+    featureServices: {},
+  },
 
-    create() {
-        return {
-            render() {
-                return <App />;
-            },
-        };
-    },
+  create() {
+    return {
+      render() {
+        return <App />;
+      },
+    };
+  },
 };

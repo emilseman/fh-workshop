@@ -8,12 +8,20 @@ export default {
     },
     featureServices: {},
   },
+  optionalDependencies: {
+    featureServices: {
+      'sample-service': '^1.0.0',
+    },
+  },
 
   create(env: any) {
     console.log(env);
+
+    const sampleService = env.featureServices['sample-service'];
+
     return {
       render() {
-        return <App />;
+        return <App sampleService={sampleService} />;
       },
     };
   },

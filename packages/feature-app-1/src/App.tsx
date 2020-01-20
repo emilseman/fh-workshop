@@ -1,7 +1,24 @@
 import * as React from 'react';
 
-export class App extends React.Component {
+interface AppProps {
+  sampleService: any;
+}
+
+export class App extends React.Component<AppProps> {
   public render(): React.ReactNode {
-    return <span>This is feature App no. 1</span>;
+    const { serviceStore } = this.props.sampleService || {
+      serviceStore: undefined,
+    };
+
+    return (
+      <div>
+        <span>This is feature App no. 1 </span>
+        <span>
+          {serviceStore
+            ? `Sample service was found, service was setup by: ${serviceStore.setupBy}`
+            : 'Sample service was not provided'}
+        </span>
+      </div>
+    );
   }
 }

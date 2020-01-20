@@ -9,6 +9,7 @@
   "homepage": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist-es/client.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -24,7 +25,7 @@
     "build:cjs": "tsc --project tsconfig.build.json",
     "build:es": "webpack",
     "build:watch:server": "yarn build:cjs --watch --preserveWatchOutput --pretty",
-    "build:watch:client": "yarn build:es --watch",
+    "build:watch:client": "yarn build:es --watch --mode=development",
     "nodeserver": "nodemon dist",
     "watch": "run-p build:watch:server build:watch:client nodeserver "
   },

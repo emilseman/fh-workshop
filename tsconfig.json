@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist",
     "baseUrl": "./packages",
     "lib": ["es2017"],
     "paths": {"packages/*": ["./*/src"]},
