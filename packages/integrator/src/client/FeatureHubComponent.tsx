@@ -5,6 +5,8 @@ import {
   FeatureHubContextProvider,
 } from '@feature-hub/react';
 import { defineSampleService, SampleServiceV1 } from 'sample-feature-service';
+import buttonService from 'buttonservice';
+
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -56,11 +58,12 @@ export class FeatureHubComponent extends React.Component {
 
     defineExternals({ react: React, 'styled-components': styled });
     this.featureHub = createFeatureHub('hub:integrator', {
-      featureServiceDefinitions: [defineSampleService({})],
+      featureServiceDefinitions: [defineSampleService({}), buttonService],
       featureServiceDependencies: { 'sample-service': '^1.0.0' },
       moduleLoader: loadAmdModule, // loadCommonJsModule for server side rendering
       providedExternals: { react: '16.12.0', 'styled-components': '5.0.0' },
     });
+
     const smplS: SampleServiceV1 = this.featureHub.featureServices[
       'sample-service'
     ] as any;
@@ -86,6 +89,12 @@ export class FeatureHubComponent extends React.Component {
               src="https://workshop-feature-hub-acc.s3.eu-central-1.amazonaws.com/feature-app-external/feature-app-external.js"
             />
           </StyledFaContainerTop>
+          <StyledFaContainer3>
+            <FeatureAppLoader
+              featureAppId="fa"
+              src="http://localhost:3002/fa.js"
+            />
+          </StyledFaContainer3>
         </FeatureHubContextProvider>
       </StyledWrapper>
     );

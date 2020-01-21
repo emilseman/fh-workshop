@@ -6,7 +6,9 @@ export default {
     externals: {
       react: '^16.12.0',
     },
-    featureServices: {},
+    featureServices: {
+      buttonservice: '^1.0.0',
+    },
   },
   optionalDependencies: {
     featureServices: {
@@ -18,10 +20,13 @@ export default {
     console.log(env);
 
     const sampleService = env.featureServices['sample-service'];
+    const buttonservice = env.featureServices['buttonservice'];
 
     return {
       render() {
-        return <App sampleService={sampleService} />;
+        return (
+          <App sampleService={sampleService} buttonservice={buttonservice} />
+        );
       },
     };
   },

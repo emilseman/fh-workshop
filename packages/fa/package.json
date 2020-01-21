@@ -1,12 +1,12 @@
 {
-  "name": "feature-app-external",
+  "name": "fa",
   "version": "0.0.0",
   "description": "Sample external feature app",
   "author": "Aleš Jiránek <ales.jiranek@sinnerschrader.com>",
   "homepage": "https://github.com/emilseman/fh-workshop#readme",
   "license": "ISC",
-  "main": "dist-es/feature-app-external.js",
-  "module": "dist-es/feature-app-external.js",
+  "main": "dist-es/fa.js",
+  "module": "dist-es/fa.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
