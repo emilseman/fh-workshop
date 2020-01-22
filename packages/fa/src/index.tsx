@@ -6,6 +6,9 @@ export default {
     externals: {
       react: '^16.0.0',
     },
+    featureServices: {},
+  },
+  optionalDependencies: {
     featureServices: { buttonservice: '^1.0.0' },
   },
 

@@ -7,7 +7,9 @@ interface AppProps {
 
 export class App extends React.Component<AppProps> {
   public render(): React.ReactNode {
-    const { buttonservice } = this.props;
+    const buttonservice = this.props.buttonservice || {
+      handleButton: () => {},
+    };
 
     return (
       <div>
