@@ -5,7 +5,7 @@ import {
   FeatureHubContextProvider,
 } from '@feature-hub/react';
 import { defineSampleService, SampleServiceV1 } from 'sample-feature-service';
-import buttonService from 'buttonservice';
+import buttonService from 'button-service';
 
 import * as React from 'react';
 import styled from 'styled-components';
@@ -68,7 +68,7 @@ export class FeatureHubComponent extends React.Component {
       'sample-service'
     ] as any;
     if (smplS) {
-      smplS.serviceStore.setupBy = 'Feature hub integrator';
+      smplS.serviceStore.setupBy = 'Feature hub integrators';
     }
   }
 
@@ -77,18 +77,24 @@ export class FeatureHubComponent extends React.Component {
       <StyledWrapper>
         <FeatureHubContextProvider value={this.featureHub}>
           <StyledMain>React is working now</StyledMain>
-          <StyledFaContainer1>
-            <FeatureAppLoader featureAppId="id-fa-1" src="/public/fa1.js" />
-          </StyledFaContainer1>
-          <StyledFaContainer2>
-            <FeatureAppLoader featureAppId="id-fa-2" src="/public/fa1.js" />
-          </StyledFaContainer2>
           <StyledFaContainerTop>
             <FeatureAppLoader
               featureAppId="id-fa-external"
-              src="https://workshop-feature-hub-acc.s3.eu-central-1.amazonaws.com/feature-app-external/feature-app-external.js"
+              src="http://localhost:3003/feature-app-external.js"
             />
           </StyledFaContainerTop>
+          <StyledFaContainer1>
+            <FeatureAppLoader
+              featureAppId="id-fa-1"
+              src="/public/feature-app-1.js"
+            />
+          </StyledFaContainer1>
+          <StyledFaContainer2>
+            <FeatureAppLoader
+              featureAppId="id-fa-2"
+              src="/public/feature-app-1.js"
+            />
+          </StyledFaContainer2>
           <StyledFaContainer3>
             <FeatureAppLoader
               featureAppId="fa"

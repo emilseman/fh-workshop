@@ -1,20 +1,32 @@
-import { ButtonService } from 'buttonservice/dist';
+import { ButtonService } from 'button-service/dist';
 import * as React from 'react';
 
 interface AppProps {
   sampleService: any;
-  buttonservice: ButtonService;
+  buttonService: ButtonService;
 }
 
-export class App extends React.Component<AppProps> {
+interface AppState {
+  buttonClicked: boolean;
+  counter: number;
+}
+
+export class App extends React.Component<AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
-    props.buttonservice.addListener(this.forceRender);
+    this.state = {
+      buttonClicked: this.props.buttonService.buttonClicked,
+      counter: 0,
+    };
+    props.buttonService.addListener(this.updateState.bind(this));
   }
 
-  public forceRender = () => {
-    this.forceUpdate();
-  };
+  public updateState() {
+    this.setState({
+      buttonClicked: this.props.buttonService.buttonClicked,
+      counter: this.props.buttonService.counter,
+    });
+  }
 
   public render(): React.ReactNode {
     const { serviceStore } = this.props.sampleService || {
@@ -31,8 +43,8 @@ export class App extends React.Component<AppProps> {
         </span>
 
         <span>
-          Button has been clicked:{' '}
-          {this.props.buttonservice.buttonClicked ? 'yes ' : 'no'}
+          Button has been clicked: {this.state.buttonClicked ? 'yes, ' : 'no, '}
+          {this.state.buttonClicked && this.state.counter}
         </span>
       </div>
     );

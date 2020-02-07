@@ -26,16 +26,18 @@
     "build:es": "webpack",
     "build:watch:server": "yarn build:cjs --watch --preserveWatchOutput --pretty",
     "build:watch:client": "yarn build:es --watch --mode=development",
-    "nodeserver": "nodemon dist",
+    "nodeserver": "nodemon --watch dist",
     "watch": "run-p build:watch:server build:watch:client nodeserver "
   },
   "dependencies": {
     "@feature-hub/core": "^2.4.0",
     "@feature-hub/module-loader-amd": "^2.4.0",
     "@feature-hub/react": "^2.4.0",
+    "button-service": "^0.0.0",
     "express": "^4.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "sample-feature-service": "^0.0.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

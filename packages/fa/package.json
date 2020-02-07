@@ -22,13 +22,14 @@
     "build": "run-p build:es",
     "build:es": "webpack",
     "build:watch": "yarn build:es --watch",
-    "watch": "yarn build:watch",
+    "watch": "run-p build:watch server",
     "server": "node ./server.js"
   },
   "bugs": {
     "url": "https://github.com/emilseman/fh-workshop/issues"
   },
   "devDependencies": {
+    "button-service": "^0.0.0",
     "express": "^4.17.1"
   }
 }

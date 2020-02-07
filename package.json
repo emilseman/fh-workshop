@@ -7,7 +7,7 @@
   "scripts": {
     "build": "lerna run build",
     "watch": "lerna run watch --parallel",
-    "format": "prettier --single-quote --trailing-comma all --write \"{**/src,__{tests,mocks}__}/**/*.{ts,tsx}\""
+    "format": "prettier --single-quote --trailing-comma all --write \"{{**/src,__{tests,mocks}__}/**/*.{ts,tsx,js},**/webpack.config.js}\""
   },
   "devDependencies": {
     "lerna": "^3.20.2",

@@ -7,7 +7,7 @@ export default {
       react: '^16.12.0',
     },
     featureServices: {
-      buttonservice: '^1.0.0',
+      'button-service': '^1.0.0',
     },
   },
   optionalDependencies: {
@@ -20,12 +20,12 @@ export default {
     console.log(env);
 
     const sampleService = env.featureServices['sample-service'];
-    const buttonservice = env.featureServices['buttonservice'];
+    const buttonService = env.featureServices['button-service'];
 
     return {
       render() {
         return (
-          <App sampleService={sampleService} buttonservice={buttonservice} />
+          <App sampleService={sampleService} buttonService={buttonService} />
         );
       },
     };

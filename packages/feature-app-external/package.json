@@ -22,7 +22,7 @@
     "build": "run-p build:es",
     "build:es": "webpack",
     "build:watch": "yarn build:es --watch",
-    "watch": "yarn build:watch",
+    "watch": "run-p build:watch server",
     "server": "node ./server.js"
   },
   "bugs": {

@@ -9,15 +9,15 @@ export default {
     featureServices: {},
   },
   optionalDependencies: {
-    featureServices: { buttonservice: '^1.0.0' },
+    featureServices: { 'button-service': '^1.0.0' },
   },
 
   create(env: any) {
-    const buttonservice = env.featureServices['buttonservice'] as any;
+    const buttonService = env.featureServices['button-service'] as any;
 
     return {
       render() {
-        return <App buttonservice={buttonservice} />;
+        return <App buttonService={buttonService} />;
       },
     };
   },

@@ -21,7 +21,7 @@
   "scripts": {
     "build": "run-p build:es build:cjs",
     "build:cjs": "tsc --project tsconfig.build.json",
-    "build:watch:cjs": "yarn build:cjs --watch",
+    "build:watch:cjs": "yarn build:cjs --watch --preserveWatchOutput --pretty",
     "build:es": "webpack",
     "build:watch:es": "yarn build:es --watch",
     "watch": "run-p build:watch:es build:watch:cjs"
